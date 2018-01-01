@@ -1,1 +1,1 @@
-# hellonode
+# Hello Node! Simple GKE application 
