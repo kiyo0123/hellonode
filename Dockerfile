@@ -1,4 +1,4 @@
-FROM node:6.9
+FROM node:alpine
 EXPOSE 8080
-COPY server.js /server.js
+COPY app/server.js /server.js
 CMD node server.js

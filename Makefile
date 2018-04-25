@@ -10,7 +10,7 @@ gae-deploy:
 
 PHONY: gke-deploy
 gke-deploy:
-	kubectl apply -f hellonode-deployment.yaml
-	kubectl apply -f hellonode-service.yaml
+	kubectl apply -f k8s/hellonode-deployment.yaml
+	kubectl apply -f k8s/hellonode-service.yaml
 
 
