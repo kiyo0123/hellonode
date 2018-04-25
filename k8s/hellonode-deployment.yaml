@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    name: hellonode
+  name: hellonode
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: hellonode
+    spec:
+      containers:
+      - image: gcr.io/fukudak-gke/hellonode:v1
+        name: hello-node
+        ports:
+        - containerPort: 8080
+
+
