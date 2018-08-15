@@ -2,11 +2,15 @@ GCLOUD_PROJECT:=$(shell gcloud config list project --format="value(core.project)
 
 PHONY: build
 build:
-	gcloud container builds submit --tag  gcr.io/${GCLOUD_PROJECT}/hellonode:v1 .
+	gcloud builds submit --tag  gcr.io/${GCLOUD_PROJECT}/hellonode:v1 .
 
-PHONY: gae-deploy
-gae-deploy:
-	gcloud app deploy
+PHONY: gae-standard-deploy
+gae-standard-deploy:
+	gcloud app deploy gae/standard/app.yaml
+
+PHONY: gae-flex-deploy
+gae-flex-deploy:
+	gcloud app deploy gae/flex/app.yaml
 
 PHONY: gke-deploy
 gke-deploy:
